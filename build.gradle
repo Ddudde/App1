@@ -1,0 +1,47 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.5'
+	id 'io.spring.dependency-management' version "1.0.11.RELEASE"
+	id 'org.openjfx.javafxplugin' version '0.0.5'
+	id 'edu.sc.seis.launch4j' version '2.4.6'
+	id 'java'
+}
+
+group = 'com.demo'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter'
+	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+	compile 'org.springframework.boot:spring-boot-starter-data-rest'
+	compile 'org.postgresql:postgresql'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+}
+
+jar {
+	manifest {
+		attributes 'Main-Class': 'com.demo.DemoApplication'
+	}
+	enabled = true
+}
+
+launch4j {
+	headerType="gui"
+	mainClassName = "com.demo.DemoApplication"
+	outfile = "App.exe"
+	jar = '../libs/demo-0.0.1-SNAPSHOT.jar'
+}
+
+task runnn {
+	dependsOn(jar)
+	dependsOn(createExe)
+}
+
+javafx {
+	modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.media' ]
+}
