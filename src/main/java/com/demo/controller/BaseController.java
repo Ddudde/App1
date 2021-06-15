@@ -93,6 +93,7 @@ public class BaseController {
         vyhda.setVisible(false);
         StartFX.close_stage();
         StartFX.reshow_main();
+        StartFX.users_log = null;
     }
 
     public void unvis404() throws IOException {

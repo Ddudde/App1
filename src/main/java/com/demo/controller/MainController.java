@@ -104,7 +104,7 @@ public class MainController {
             erroremptfd.setVisible(true);
             return;
         }
-        if(usersImpl.getuser(r_log.getText()) == null)
+        if(usersImpl.getuser(r_log.getText()) != null)
         {
             errorzanlog.setVisible(true);
             return;
