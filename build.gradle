@@ -24,7 +24,7 @@ dependencies {
 
 jar {
 	manifest {
-		attributes 'Main-Class': 'com.demo.DemoApplication'
+		attributes 'Main-Class': 'com.demo.PetApp'
 	}
 	archivesBaseName = 'Lapy&Hwost'
 	enabled = true
@@ -32,7 +32,7 @@ jar {
 
 launch4j {
 	headerType = "gui"
-	mainClassName = "com.demo.DemoApplication"
+	mainClassName = "com.demo.PetApp"
 	outfile = "Lapy&Hwost.exe"
 	jar = '../libs/Lapy&Hwost-0.1.0.jar'
 	icon = "${projectDir}/src/main/resources/images/icon.ico"
